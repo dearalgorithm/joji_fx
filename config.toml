@@ -10,12 +10,13 @@ pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-paginate=3 # articles per page
+paginate=100 # articles per page
 
 [params]
 	mode="auto" # color-mode → light,dark or auto
 	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
-	subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com/athul/archie)"
+	subtitle = "Having lots of fun documenting experiments related with Computer Science. I’ll be following the [RDFM and STFW](https://en.wikipedia.org/wiki/RTFM) standards as well as [The Tao of Programming](https://www.mit.edu/~xela/tao.html) guidelines. Please, don’t take the following lines too seriously 🐱‍💻"
+	favicon                      = "./favicon/ship.svg"  
 
 # Social Tags
 
@@ -37,21 +38,33 @@ url = "https://gitlab.com/athul/"
 # Main menu Items
 
 [[menu.main]]
-name = "Home"
+name = "newsletter"
 url = "/"
 weight = 1
 
 [[menu.main]]
-name = "All posts"
+name = "rss"
 url = "/posts"
 weight = 2
 
-[[menu.main]]
-name = "About"
-url = "/about"
+# Footer menu Items
+
+[[menu.footer]]
+name = "email"
+url = "/"
+weight = 1
+
+[[menu.footer]]
+name = "github"
+url = "/"
+weight = 2
+
+[[menu.footer]]
+name = "newsletter"
+url = "/"
 weight = 3
 
-[[menu.main]]
-name = "Tags"
-url = "/tags"
+[[menu.footer]]
+name = "rss"
+url = "/posts"
 weight = 4
