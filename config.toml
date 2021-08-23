@@ -38,21 +38,33 @@ url = "https://gitlab.com/athul/"
 # Main menu Items
 
 [[menu.main]]
-name = "Home"
+name = "newsletter"
 url = "/"
 weight = 1
 
 [[menu.main]]
-name = "All posts"
+name = "rss"
 url = "/posts"
 weight = 2
 
-[[menu.main]]
-name = "About"
-url = "/about"
+# Footer menu Items
+
+[[menu.footer]]
+name = "email"
+url = "/"
+weight = 1
+
+[[menu.footer]]
+name = "github"
+url = "/"
+weight = 2
+
+[[menu.footer]]
+name = "newsletter"
+url = "/"
 weight = 3
 
-[[menu.main]]
-name = "Tags"
-url = "/tags"
+[[menu.footer]]
+name = "rss"
+url = "/posts"
 weight = 4
