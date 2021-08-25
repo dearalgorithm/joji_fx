@@ -4,8 +4,10 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=generator content="Hugo 0.87.0">
-<link rel=canonical href=/joji_fx/tags/>
-<meta name=description content="Tags">
+<link rel=canonical href=/joji_fx/00-ubuntu-server-raspberry-pi/>
+<meta name=description content="Required requisites: A Raspberry Pi 4 model B An Ethernet Cable A proper power supply for your Raspberry Pi An SD Card compatible with your Raspberry
+I’m assuming that you already have a computer with an SD card slot and an internet connection.
+I will be using a laptop with Fedora 34 workstation as an “external computer”. But you can follow these steps if you are on other distributions, MacOS or Windows.">
 <link rel=apple-touch-icon sizes=180x180 href=https://dearalgorithm.github.io/joji_fx/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://dearalgorithm.github.io/joji_fx/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=https://dearalgorithm.github.io/joji_fx/favicon-16x16.png>
@@ -19,7 +21,7 @@
 <link rel=stylesheet type=text/css href=/joji_fx/css/styles.css>
 <link rel=stylesheet href=/joji_fx/css/custom_01.css>
 <link rel=stylesheet href=/joji_fx/css/custom_02.css>
-<title>Tags | Cupper</title>
+<title>Installing Ubuntu Server on a Raspberry Pi 4 model B in 3 steps (The easiest way) | Cupper</title>
 </head>
 <body>
 <a href=#main>skip to content</a>
@@ -49,12 +51,12 @@ Menu
 </a>
 </li>
 <li class=pattern>
-<a href=/joji_fx/post/><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
+<a href=/joji_fx/post/ aria-current=page><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
 <span class=text>Blog</span>
 </a>
 </li>
 <li class=pattern>
-<a href=/joji_fx/tags/ aria-current=page><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
+<a href=/joji_fx/tags/><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
 <span class=text>Tags</span>
 </a>
 </li>
@@ -75,38 +77,108 @@ Menu
 <div class=main-and-footer>
 <div>
 <main id=main>
-<h1>Tags</h1>
-<ul class=patterns-list>
-<li>
-<h2>
-<a href=/joji_fx/tags/fedora/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(1) fedora
-</a>
-</h2>
+<h1><svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false"><use xlink:href="#bookmark"/></svg>
+Installing Ubuntu Server on a Raspberry Pi 4 model B in 3 steps (The easiest way)
+</h1>
+<div class=date>
+<strong>Publish date: </strong>Aug 23, 2021
+<br>
+<strong>Last updated: </strong>Aug 25, 2021
+</div>
+<div class=tags>
+<strong>Tags: </strong>
+<ul aria-label=tags>
+<li><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
+<a href=/joji_fx/tags/raspberry/>raspberry</a>
 </li>
-<li>
-<h2>
-<a href=/joji_fx/tags/linux/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(1) linux
-</a>
-</h2>
+<li><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
+<a href=/joji_fx/tags/linux/>linux</a>
 </li>
-<li>
-<h2>
-<a href=/joji_fx/tags/raspberry/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(1) raspberry
-</a>
-</h2>
+<li><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
+<a href=/joji_fx/tags/ubuntu-server/>ubuntu server</a>
 </li>
-<li>
-<h2>
-<a href=/joji_fx/tags/ubuntu-server/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(1) ubuntu server
-</a>
-</h2>
+<li><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
+<a href=/joji_fx/tags/fedora/>fedora</a>
 </li>
 </ul>
+</div>
+<nav class=toc aria-labelledby=toc-heading>
+<h2 id=toc-heading>Table of contents</h2>
+<ol>
+<li>
+<a href=#write-the-so-image-in-your-sd-card>
+Write the SO image in your SD card
+</a>
+</li>
+<li>
+<a href=#check-if-your-hardware-actually-works>
+Check if your hardware actually works
+</a>
+</li>
+<li>
+<a href=#connect-locally-to-your-raspberry-pi-through-ssh>
+Connect (locally) to your Raspberry Pi through SSH
+</a>
+</li>
+<li>
+<a href=#final-thoughts-and-other-resources>
+Final thoughts and other resources
+</a>
+</li>
+</ol>
+</nav>
+<p>Required requisites:
+A Raspberry Pi 4 model B
+An Ethernet Cable
+A proper power supply for your Raspberry Pi
+An SD Card compatible with your Raspberry</p>
+<p>I’m assuming that you already have a computer with an SD card slot and an internet connection.</p>
+<p>I will be using a laptop with Fedora 34 workstation as an “external computer”. But you can follow these steps if you are on other distributions, MacOS or Windows.</p>
+<h2 id=write-the-so-image-in-your-sd-card>Write the SO image in your SD card</h2>
+<p>Firstly plug in your SD card into your computer.</p>
+<p>Then, download the Raspberry Pi Imager software from <a href=https://www.raspberrypi.org/software/>https://www.raspberrypi.org/software/</a>.</p>
+<p>If you are using a different Linux distro than Ubuntu, you can install it through snap.</p>
+<p>Once you have it installed, open Raspberry Pi Imager.</p>
+<p>Choose os:</p>
+<ul>
+<li>Select “Other general purpose OS”</li>
+<li>Select “Ubuntu”</li>
+<li>Select “Ubuntu Server 20.04.2 LTS (RPi 3/4/400)”</li>
+</ul>
+<p>Choose storage:</p>
+<ul>
+<li>Select your SD card</li>
+</ul>
+<p>Click write and wait until the process is finished. If you have no errors you can go on! Otherwise I recommend you to follow STFW and RDFM standards :P</p>
+<h2 id=check-if-your-hardware-actually-works>Check if your hardware actually works</h2>
+<p>You don’t want to check if your Raspberry actually works once you have set up the fan and the case and even your stickers, right?</p>
+<p>So plug in the SD card and then the power supply, if you can see a red light (power supply) and a green light (SO sd card) then you are on a roll! Keep going!</p>
+<h2 id=connect-locally-to-your-raspberry-pi-through-ssh>Connect (locally) to your Raspberry Pi through SSH</h2>
+<p>Before acces it, You will need to know the IP of your Raspberry Pi, the easiest way to know it&rsquo;s to login into your router and look at all the devices connected to your network. Login details are on your physical router.</p>
+<p>In my case, the device was named “ubuntu” and it’s ip was 192.168.0.19</p>
+<p>If you are on Linux, I assume that you have already installed open-ssh. If you are on linux I assume that you have already installed putty or cygwin</p>
+<p>So, open your terminal and type:
+ssh <a href=mailto:ubuntu@192.168.0.19>ubuntu@192.168.0.19</a></p>
+<p>Press Enter. When the terminal asks you for a password type the default password “ubuntu”. You will have to add this new host to your known hosts list typing “yes”. Also, you will have to change the password. Use a strong one!</p>
+<p>At this point you are already connected to your Ubuntu Server.</p>
+<h2 id=final-thoughts-and-other-resources>Final thoughts and other resources</h2>
+<p>There are endless approaches to achieve exactly the same thing. So feel free to pick whichever fits better your needs, skills or knowledge.</p>
+<p>If you find any errors/mistakes in this text, please email me!</p>
+<p>If you need help with the process described above and you already tried SFDW and RDFM, then please email me!</p>
+<h3 id=resources>resources</h3>
+<p><a href=https://getfedora.org/>https://getfedora.org/</a><br>
+<a href=https://www.raspberrypi.org/software/>https://www.raspberrypi.org/software/</a><br>
+<a href=https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi>https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi</a><br>
+<a href=https://www.openssh.com/manual.html>https://www.openssh.com/manual.html</a></p>
 </main>
+<div id=disqus-container>
+<button id=disqus-button onclick=showComments()>Show comments</button>
+<div id=disqus-comments>
+<p><em>Disqus comments are disabled.</em></p>
+<script type=application/javascript>function showComments(){var a=document.getElementById('disqus-button'),b;a.parentNode.removeChild(a),b=document.getElementById('disqus-comments'),b.style.display='block'}</script>
+<noscript>Enable JavaScript to view Disqus comments.</noscript>
+</div>
+</div>
 <footer role=contentinfo>
 <div>
 <label for=themer>
