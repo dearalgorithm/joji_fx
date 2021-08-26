@@ -29,7 +29,7 @@ params:
   showThemeSwitcher: true
   defaultDarkTheme: false
   moveFooterToHeader: false
-  logoAlt: "An alternative text description of the logo"
+  logoAlt: "Website logo: a square shape with unreadable code inside."
   customCss:
     - css/custom_01.css
     - css/custom_02.css
