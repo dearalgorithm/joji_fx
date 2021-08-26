@@ -1,15 +1,15 @@
 ---
-title: "Installing Ubuntu Server on a Raspberry Pi 4 model B in 3 steps (The easiest way) "
+title: "How to install Ubuntu Server on a Raspberry Pi 4 model B in 3 steps (The easiest way) "
 date: 2021-08-23T15:34:20+02:00
 draft: false
 tags: [raspberry, linux, ubuntu server, fedora]
 ---
 
-Required requisites:
-A Raspberry Pi 4 model B 
-An Ethernet Cable
-A proper power supply for your Raspberry Pi 
-An SD Card compatible with your Raspberry
+**Things you need:**
+- A Raspberry Pi 4 model B 
+- An Ethernet Cable
+- A proper power supply for your Raspberry Pi 
+- An SD Card compatible with your Raspberry
 
 I’m assuming that you already have a computer with an SD card slot and an internet connection. 
 
@@ -37,33 +37,43 @@ Click write and wait until the process is finished. If you have no errors you ca
 
 ## Check if your hardware actually works
 
-You don’t want to check if your Raspberry actually works once you have set up the fan and the case and even your stickers, right? 
+You don’t want to wait to check if your raspberry actually works once you have set up the fan and screwed the case on, right?
 
 So plug in the SD card and then the power supply, if you can see a red light (power supply) and a green light (SO sd card) then you are on a roll! Keep going! 
 ## Connect (locally) to your Raspberry Pi through SSH
 
-Before acces it, You will need to know the IP of your Raspberry Pi, the easiest way to know it's to login into your router and look at all the devices connected to your network. Login details are on your physical router.
+Before you access it, you will need **to know the IP of your Raspberry Pi**. The easiest way to find out what its IP is, is to **login into your router and look at all the devices connected to your network**. 
 
-In my case, the device was named “ubuntu” and it’s ip was 192.168.0.19
+In my case, the device was named “ubuntu” and its IP was 192.168.0.19
 
-If you are on Linux, I assume that you have already installed open-ssh. If you are on linux I assume that you have already installed putty or cygwin 
+If you are on Linux/MacOS, I assume that you have already installed open-ssh. If you are on Windows I assume that you have already installed putty or cygwin 
 
 So, open your terminal and type:
-ssh ubuntu@192.168.0.19
+{{< cmd >}}
+ssh username@hostname
+{{< /cmd >}}
 
-Press Enter. When the terminal asks you for a password type the default password “ubuntu”. You will have to add this new host to your known hosts list typing “yes”. Also, you will have to change the password. Use a strong one! 
+The username is "ubuntu" by default. The hostname is your Raspberry Pi IP, as I said just above, mine is "192.168.0.19". So the whole command shoud look like this:
+
+{{< cmd >}}
+ssh ubuntu@192.168.0.19
+{{< /cmd >}}
+
+
+Press Enter. You will have to add this new host to your known hosts list typing `yes`. When the terminal asks you for a password type the default password `ubuntu`. Also, you will have to change the password. Use a strong one! 
 
 At this point you are already connected to your Ubuntu Server.
 
 ## Final thoughts and other resources
-There are endless approaches to achieve exactly the same thing. So feel free to pick whichever fits better your needs, skills or knowledge. 
+**There are endless approaches to achieve exactly the same thing**. I only described one way. So feel free to pick whichever most suits your needs, skills or knowledge. :)
 
-If you find any errors/mistakes in this text, please email me!
+If you find any errors/mistakes in this text, please [email me](mailto:joji@dearalgorithm.com)!
 
-If you need help with the process described above and you already tried SFDW and RDFM, then please email me!
+If you need help with the process described above and you already tried SFDW and RDFM, then please [email me](mailto:joji@dearalgorithm.com)!
 
 ### resources
-https://getfedora.org/  
-https://www.raspberrypi.org/software/  
-https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi  
-https://www.openssh.com/manual.html
+[Get Fedora Workstation](https://getfedora.org/)  
+[Download Raspberry Pi Imager](https://www.raspberrypi.org/software/)  
+[A more detailed guide from Ubuntu website](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi)  
+[Open SSH manual](https://www.openssh.com/manual.html)  
+[6 Causes for a Raspberry Pi That Won't Boot \(And How to Fix Them\)](https://www.makeuseof.com/tag/raspberry-pi-wont-boot-fix/)
