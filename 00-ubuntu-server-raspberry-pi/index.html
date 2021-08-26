@@ -5,8 +5,8 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=generator content="Hugo 0.87.0">
 <link rel=canonical href=/joji_fx/00-ubuntu-server-raspberry-pi/>
-<meta name=description content="Required requisites: A Raspberry Pi 4 model B An Ethernet Cable A proper power supply for your Raspberry Pi An SD Card compatible with your Raspberry
-I’m assuming that you already have a computer with an SD card slot and an internet connection.
+<meta name=description content="Things you need:
+ A Raspberry Pi 4 model B An Ethernet Cable A proper power supply for your Raspberry Pi An SD Card compatible with your Raspberry  I’m assuming that you already have a computer with an SD card slot and an internet connection.
 I will be using a laptop with Fedora 34 workstation as an “external computer”. But you can follow these steps if you are on other distributions, MacOS or Windows.">
 <link rel=apple-touch-icon sizes=180x180 href=https://dearalgorithm.github.io/joji_fx/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://dearalgorithm.github.io/joji_fx/favicon-32x32.png>
@@ -21,7 +21,7 @@ I will be using a laptop with Fedora 34 workstation as an “external computer�
 <link rel=stylesheet type=text/css href=/joji_fx/css/styles.css>
 <link rel=stylesheet href=/joji_fx/css/custom_01.css>
 <link rel=stylesheet href=/joji_fx/css/custom_02.css>
-<title>Installing Ubuntu Server on a Raspberry Pi 4 model B in 3 steps (The easiest way) | Cupper</title>
+<title>How to install Ubuntu Server on a Raspberry Pi 4 model B in 3 steps (The easiest way) | Cupper</title>
 </head>
 <body>
 <a href=#main>skip to content</a>
@@ -78,12 +78,12 @@ Menu
 <div>
 <main id=main>
 <h1><svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false"><use xlink:href="#bookmark"/></svg>
-Installing Ubuntu Server on a Raspberry Pi 4 model B in 3 steps (The easiest way)
+How to install Ubuntu Server on a Raspberry Pi 4 model B in 3 steps (The easiest way)
 </h1>
 <div class=date>
 <strong>Publish date: </strong>Aug 23, 2021
 <br>
-<strong>Last updated: </strong>Aug 25, 2021
+<strong>Last updated: </strong>Aug 26, 2021
 </div>
 <div class=tags>
 <strong>Tags: </strong>
@@ -127,11 +127,13 @@ Final thoughts and other resources
 </li>
 </ol>
 </nav>
-<p>Required requisites:
-A Raspberry Pi 4 model B
-An Ethernet Cable
-A proper power supply for your Raspberry Pi
-An SD Card compatible with your Raspberry</p>
+<p><strong>Things you need:</strong></p>
+<ul>
+<li>A Raspberry Pi 4 model B</li>
+<li>An Ethernet Cable</li>
+<li>A proper power supply for your Raspberry Pi</li>
+<li>An SD Card compatible with your Raspberry</li>
+</ul>
 <p>I’m assuming that you already have a computer with an SD card slot and an internet connection.</p>
 <p>I will be using a laptop with Fedora 34 workstation as an “external computer”. But you can follow these steps if you are on other distributions, MacOS or Windows.</p>
 <h2 id=write-the-so-image-in-your-sd-card>Write the SO image in your SD card</h2>
@@ -151,25 +153,37 @@ An SD Card compatible with your Raspberry</p>
 </ul>
 <p>Click write and wait until the process is finished. If you have no errors you can go on! Otherwise I recommend you to follow STFW and RDFM standards :P</p>
 <h2 id=check-if-your-hardware-actually-works>Check if your hardware actually works</h2>
-<p>You don’t want to check if your Raspberry actually works once you have set up the fan and the case and even your stickers, right?</p>
+<p>You don’t want to wait to check if your raspberry actually works once you have set up the fan and screwed the case on, right?</p>
 <p>So plug in the SD card and then the power supply, if you can see a red light (power supply) and a green light (SO sd card) then you are on a roll! Keep going!</p>
 <h2 id=connect-locally-to-your-raspberry-pi-through-ssh>Connect (locally) to your Raspberry Pi through SSH</h2>
-<p>Before acces it, You will need to know the IP of your Raspberry Pi, the easiest way to know it&rsquo;s to login into your router and look at all the devices connected to your network. Login details are on your physical router.</p>
-<p>In my case, the device was named “ubuntu” and it’s ip was 192.168.0.19</p>
-<p>If you are on Linux, I assume that you have already installed open-ssh. If you are on linux I assume that you have already installed putty or cygwin</p>
+<p>Before you access it, you will need <strong>to know the IP of your Raspberry Pi</strong>. The easiest way to find out what its IP is, is to <strong>login into your router and look at all the devices connected to your network</strong>.</p>
+<p>In my case, the device was named “ubuntu” and its IP was 192.168.0.19</p>
+<p>If you are on Linux/MacOS, I assume that you have already installed open-ssh. If you are on Windows I assume that you have already installed putty or cygwin</p>
 <p>So, open your terminal and type:
-ssh <a href=mailto:ubuntu@192.168.0.19>ubuntu@192.168.0.19</a></p>
-<p>Press Enter. When the terminal asks you for a password type the default password “ubuntu”. You will have to add this new host to your known hosts list typing “yes”. Also, you will have to change the password. Use a strong one!</p>
+<pre class=cmd>
+  
+  <code>ssh username@hostname</code>
+  
+</pre>
+</p>
+<p>The username is &ldquo;ubuntu&rdquo; by default. The hostname is your Raspberry Pi IP, as I said just above, mine is &ldquo;192.168.0.19&rdquo;. So the whole command shoud look like this:</p>
+<pre class=cmd>
+  
+  <code>ssh ubuntu@192.168.0.19</code>
+  
+</pre>
+<p>Press Enter. You will have to add this new host to your known hosts list typing <code>yes</code>. When the terminal asks you for a password type the default password <code>ubuntu</code>. Also, you will have to change the password. Use a strong one!</p>
 <p>At this point you are already connected to your Ubuntu Server.</p>
 <h2 id=final-thoughts-and-other-resources>Final thoughts and other resources</h2>
-<p>There are endless approaches to achieve exactly the same thing. So feel free to pick whichever fits better your needs, skills or knowledge.</p>
-<p>If you find any errors/mistakes in this text, please email me!</p>
-<p>If you need help with the process described above and you already tried SFDW and RDFM, then please email me!</p>
+<p><strong>There are endless approaches to achieve exactly the same thing</strong>. I only described one way. So feel free to pick whichever most suits your needs, skills or knowledge. :)</p>
+<p>If you find any errors/mistakes in this text, please <a href=mailto:joji@dearalgorithm.com>email me</a>!</p>
+<p>If you need help with the process described above and you already tried SFDW and RDFM, then please <a href=mailto:joji@dearalgorithm.com>email me</a>!</p>
 <h3 id=resources>resources</h3>
-<p><a href=https://getfedora.org/>https://getfedora.org/</a><br>
-<a href=https://www.raspberrypi.org/software/>https://www.raspberrypi.org/software/</a><br>
-<a href=https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi>https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi</a><br>
-<a href=https://www.openssh.com/manual.html>https://www.openssh.com/manual.html</a></p>
+<p><a href=https://getfedora.org/>Get Fedora Workstation</a><br>
+<a href=https://www.raspberrypi.org/software/>Download Raspberry Pi Imager</a><br>
+<a href=https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi>A more detailed guide from Ubuntu website</a><br>
+<a href=https://www.openssh.com/manual.html>Open SSH manual</a><br>
+<a href=https://www.makeuseof.com/tag/raspberry-pi-wont-boot-fix/>6 Causes for a Raspberry Pi That Won&rsquo;t Boot (And How to Fix Them)</a></p>
 </main>
 <div id=disqus-container>
 <button id=disqus-button onclick=showComments()>Show comments</button>
