@@ -4,8 +4,10 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=generator content="Hugo 0.87.0">
-<link rel=canonical href=/joji_fx/tags/>
-<meta name=description content="Tags">
+<link rel=canonical href=/joji_fx/01-remote-backups-with-fedora-and-rsnapshot/>
+<meta name=description content="Things you will need:
+ An internet connection or a local area network A computer/virtual machine with Fedora Workstation installed A computer/virtual machine with Fedora Server Installed  Let’s assume that you have a Fedora Workstation 34 machine with the purpose of saving backups on it.
+Also, you have a Fedora Server 34. You know the root’s password and you checked Allow root SSH login with password during the installation.">
 <link rel=apple-touch-icon sizes=180x180 href=https://dearalgorithm.github.io/joji_fx/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://dearalgorithm.github.io/joji_fx/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=https://dearalgorithm.github.io/joji_fx/favicon-16x16.png>
@@ -19,7 +21,7 @@
 <link rel=stylesheet type=text/css href=/joji_fx/css/styles.css>
 <link rel=stylesheet href=/joji_fx/css/custom_01.css>
 <link rel=stylesheet href=/joji_fx/css/custom_02.css>
-<title>Tags | joji_fx blog</title>
+<title>How to back up files remotely from a Fedora Server 34 to a Fedora Workstation 34 | joji_fx blog</title>
 </head>
 <body>
 <a href=#main>skip to content</a>
@@ -49,12 +51,12 @@ Menu
 </a>
 </li>
 <li class=pattern>
-<a href=/joji_fx/post/><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
+<a href=/joji_fx/post/ aria-current=page><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
 <span class=text>Blog</span>
 </a>
 </li>
 <li class=pattern>
-<a href=/joji_fx/tags/ aria-current=page><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
+<a href=/joji_fx/tags/><svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50"><use xlink:href="#bookmark"/></svg>
 <span class=text>Tags</span>
 </a>
 </li>
@@ -75,59 +77,183 @@ Menu
 <div class=main-and-footer>
 <div>
 <main id=main>
-<h1>Tags</h1>
-<ul class=patterns-list>
-<li>
-<h2>
-<a href=/joji_fx/tags/backup/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(1) backup
-</a>
-</h2>
+<h1><svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false"><use xlink:href="#bookmark"/></svg>
+How to back up files remotely from a Fedora Server 34 to a Fedora Workstation 34
+</h1>
+<div class=date>
+<strong>Publish date: </strong>Aug 27, 2021
+<br>
+<strong>Last updated: </strong>Aug 27, 2021
+</div>
+<div class=tags>
+<strong>Tags: </strong>
+<ul aria-label=tags>
+<li><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
+<a href=/joji_fx/tags/linux/>linux</a>
 </li>
-<li>
-<h2>
-<a href=/joji_fx/tags/fedora/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(2) fedora
-</a>
-</h2>
+<li><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
+<a href=/joji_fx/tags/fedora/>fedora</a>
 </li>
-<li>
-<h2>
-<a href=/joji_fx/tags/fedora-server/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(1) fedora server
-</a>
-</h2>
+<li><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
+<a href=/joji_fx/tags/fedora-server/>fedora server</a>
 </li>
-<li>
-<h2>
-<a href=/joji_fx/tags/linux/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(2) linux
-</a>
-</h2>
+<li><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
+<a href=/joji_fx/tags/backup/>backup</a>
 </li>
-<li>
-<h2>
-<a href=/joji_fx/tags/raspberry/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(1) raspberry
-</a>
-</h2>
-</li>
-<li>
-<h2>
-<a href=/joji_fx/tags/rsnapshot/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(1) rsnapshot
-</a>
-</h2>
-</li>
-<li>
-<h2>
-<a href=/joji_fx/tags/ubuntu-server/><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
-(1) ubuntu server
-</a>
-</h2>
+<li><svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false"><use xlink:href="#tag"/></svg>
+<a href=/joji_fx/tags/rsnapshot/>rsnapshot</a>
 </li>
 </ul>
+</div>
+<nav class=toc aria-labelledby=toc-heading>
+<h2 id=toc-heading>Table of contents</h2>
+<ol>
+<li>
+<a href=#creating-a-ssh-pair-keys-on-your-workstation-and-adding-the-public-key-to-your-server>
+Creating a SSH pair keys on your Workstation and adding the public key to your Server
+</a>
+</li>
+<li>
+<a href=#configuring-and-automatizing-your-backups-with-rsnapshot-and-cron-jobs>
+Configuring and automatizing your backups with rsnapshot and cron jobs
+</a>
+</li>
+<li>
+<a href=#final-thoughts-and-other-resources>
+Final thoughts and other resources
+</a>
+</li>
+</ol>
+</nav>
+<p><strong>Things you will need:</strong></p>
+<ul>
+<li>An internet connection or a local area network</li>
+<li>A computer/virtual machine with Fedora Workstation installed</li>
+<li>A computer/virtual machine with Fedora Server Installed</li>
+</ul>
+<p>Let’s assume that you have a Fedora Workstation 34 machine with the purpose of saving backups on it.</p>
+<p>Also, you have a Fedora Server 34. You know the root’s password and you checked <code>Allow root SSH login with password</code> during the installation.</p>
+<p>If you need to add your username to sudoers, reboot the machine, log in as root and type <code>usermod -aG wheel yourusername</code></p>
+<p>If you need to edit SSH root access you can type <code>sudo vim /etc/ssh/sshd_config</code> and uncomment or write these lines:</p>
+<pre><code class=language-conf>PasswordAuthentication yes
+PermitRootLogin yes
+</code></pre>
+<h2 id=creating-a-ssh-pair-keys-on-your-workstation-and-adding-the-public-key-to-your-server>Creating a SSH pair keys on your Workstation and adding the public key to your Server</h2>
+<p><strong>This commands should be run on your Fedora Workstation</strong></p>
+<pre class=cmd>
+  
+  <code>ssh-keygen -f yourkeyfilename</code>
+  
+</pre>
+<p>You can leave the passphrase empty.</p>
+<p>Then you can copy the public key to your Fedora Server typing this:</p>
+<pre class=cmd>
+  
+  <code>ssh-copy-id -i ~/.ssh/yourkeyfilename.pub root@server</code>
+  
+</pre>
+<p>-i identifies file, also you can know your <code>server</code> IP by typing hostname -I on your Fedora Server</p>
+<p>After adding your key, you can try connecting to your server by ssh:
+<pre class=cmd>
+  
+  <code>ssh root@server</code>
+  
+</pre>
+</p>
+<p>You can know your <code>server</code> IP by typing hostname -I on your Fedora Server</p>
+<h2 id=configuring-and-automatizing-your-backups-with-rsnapshot-and-cron-jobs>Configuring and automatizing your backups with rsnapshot and cron jobs</h2>
+<p><strong>This commands should be run on your Fedora Workstation</strong></p>
+<p>First of all, install rsnapshot:
+<pre class=cmd>
+  
+  <code>sudo dnf install rsnapshot</code>
+  
+</pre>
+</p>
+<p>Then edit rsnapshot conf file, but first back up it! (just in case).
+<pre class=cmd>
+  
+  <code>sudo cp /etc/rsnapshot.conf /etc/rsnapshot.conf.backup</code>
+  
+</pre>
+</p>
+<p>Now you can edit it safely:
+<pre class=cmd>
+  
+  <code>sudo cp /etc/rsnapshot.conf</code>
+  
+</pre>
+</p>
+<p>Actually before you edit, I suggest that you read the rsnapshot man page, it’s quite short and you will be able to know how rsnapshot works, including its config file, so go for it!</p>
+<p><a href=https://linux.die.net/man/1/rsnapshot>https://linux.die.net/man/1/rsnapshot</a></p>
+<p>Or you can just copy-paste this configuration:</p>
+<pre><code class=language-conf>config_version    1.2
+
+snapshot_root    /home/user/backups/
+
+cmd_cp        /usr/bin/cp
+cmd_rm        /usr/bin/rm
+cmd_rsync    /usr/bin/rsync
+cmd_ssh    /usr/bin/ssh
+cmd_logger    /usr/bin/logger
+cmd_du        /usr/bin/du
+
+retain    hourly    6
+retain    daily    7
+retain    weekly    4
+retain    monthly    3
+
+backup    root@server:/home/    fedoraserver/
+</code></pre>
+<p>Remember to provide your desired path on the “snapshot_root” option. And also remember to provide your server path on the “backup” option.</p>
+<p>Now it’s time to test your config file:</p>
+<pre class=cmd>
+  
+  <code>rsnapshot configtest</code>
+  
+</pre>
+<p>If you get a “Syntax OK” then you can generate your first backup:
+<pre class=cmd>
+  
+  <code>rsnapshot hourly</code>
+  
+</pre>
+</p>
+<p>According your config file, your backup should be placed on <code>/home/user/backups/fedoraserver/</code></p>
+<p><strong>If you don’t want to automate or schedule your backups, then you are done</strong> and free to go! :)</p>
+<p>Otherwise, keep reading!</p>
+<h3 id=how-to-set-up-a-cron-job-for-rsnapshot>How to set up a cron job for rsnapshot</h3>
+<p>Create a cron file:
+<pre class=cmd>
+  
+  <code>$ sudo vim /etc/cron.d/rsnapshot</code>
+  
+</pre>
+</p>
+<pre><code>0       */4      * * *   root   /usr/bin/rsnapshot hourly
+30      3       * * *   root    /usr/bin/rsnapshot daily
+0       3       * * 1   root    /usr/bin/rsnapshot weekly
+30      2       1 * *   root    /usr/bin/rsnapshot monthly
+</code></pre>
+<p>Save it and, voilà! You’re done :)</p>
+<p><em>Now you have your backup system up and running. Congratulations!</em></p>
+<h2 id=final-thoughts-and-other-resources>Final thoughts and other resources</h2>
+<p><strong>There are endless approaches to achieve exactly the same thing</strong>. I only described one way. So feel free to pick whichever most suits your needs, skills or knowledge. :)</p>
+<p>If you find any errors/mistakes in this text, please <a href=mailto:joji@dearalgorithm.com>email me</a>!</p>
+<p>If you need help with the process described above and you already tried SFDW and RDFM, then please <a href=mailto:joji@dearalgorithm.com>email me</a>!</p>
+<h3 id=resources>resources</h3>
+<p><a href=https://getfedora.org/>Get Fedora</a><br>
+<a href=https://www.openssh.com/manual.html>Open SSH manual</a><br>
+<a href=https://linux.die.net/man/1/rsnapshot>rsnapshot manual</a></p>
 </main>
+<div id=disqus-container>
+<button id=disqus-button onclick=showComments()>Show comments</button>
+<div id=disqus-comments>
+<p><em>Disqus comments are disabled.</em></p>
+<script type=application/javascript>function showComments(){var a=document.getElementById('disqus-button'),b;a.parentNode.removeChild(a),b=document.getElementById('disqus-comments'),b.style.display='block'}</script>
+<noscript>Enable JavaScript to view Disqus comments.</noscript>
+</div>
+</div>
 <footer role=contentinfo>
 <div>
 <label for=themer>
