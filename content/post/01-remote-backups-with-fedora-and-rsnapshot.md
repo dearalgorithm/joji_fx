@@ -1,8 +1,8 @@
 ---
-title: "How to back up files remotely from a Fedora Server 34 to a Fedora Workstation 34"
+title: "How to back up files remotely from Fedora Server 34 to Fedora Workstation 34"
 date: 2021-08-27T20:30:03+02:00
 draft: false
-tags: [linux, fedora, fedora server, backup, rsnapshot]
+tags: [linux, fedora, fedora server, backup, rsnapshot, ssh]
 ---
 
 **Things you will need:**
