@@ -1,5 +1,5 @@
 ---
-title: "How to back up files remotely from Fedora Server 34 to Fedora Workstation 34"
+title: "How to backup files remotely from Fedora Server 34 to Fedora Workstation 34"
 date: 2021-08-27T20:30:03+02:00
 draft: false
 tags: [linux, fedora, fedora server, backup, rsnapshot, ssh]
@@ -58,7 +58,7 @@ First of all, install rsnapshot:
 sudo dnf install rsnapshot
 {{< /cmd >}}
 
-Then edit rsnapshot conf file, but first back up it! (just in case).
+Then edit rsnapshot conf file, but first backup it! (just in case).
 {{< cmd >}}
 sudo cp /etc/rsnapshot.conf /etc/rsnapshot.conf.backup
 {{< /cmd >}}
