@@ -17,8 +17,8 @@ imaging:
   quality: 99
 
 params:
-  description: An accessibility-friendly blog about Computer Science writted by Joji, built by Hugo and themed by Cupper.
-  homeMetaContent: An accessibility-friendly Hugo theme, ported from the original Cupper project.
+  description: An accessibility-friendly blog about Computer Science written by Joji, built by Hugo and themed by Cupper.
+  homeMetaContent: An accessibility-friendly blog about Computer Science written by Joji, built by Hugo and themed by Cupper.
   footer: This blog runs under [MIT License](https://github.com/dearalgorithm/joji_fx/blob/main/LICENSE).
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
