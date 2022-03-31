@@ -1,3 +1,11 @@
 .your-custom-class-01 {
   display: block;
 }
+
+.align-stuff {
+  text-align: center;
+}
+
+div#disqus-container {
+  display: none;
+}
