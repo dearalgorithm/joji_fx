@@ -9,16 +9,16 @@ Hi computers,
 
 I have been thinking about abstraction and I would like to share my thoughts with you. Let’s first of all define what I understand about abstraction, in computer science terms.
 
-First definition:  
+__First definition:__  
 An abstract definition of something is something that is as undefined as possible but can potentially be infinitely defined.
 
-A less abstract version of First definition:  
+__A less abstract version of First definition:__  
 An abstract definition of something (x|object) is something (x|object) that is as undefined as possible (according to the current base knowledge) but can potentially be infinitely defined.
 
 The infinity approach could be justified with these two next statements:
 
-NB, that there are infinite natural numbers in this interval [1 and +∞]
-Also notice, that there are infinite rational numbers between each natural numbers, i.e [1,2]
+NB, that there are infinite natural numbers in this interval [1 and +∞]  
+Also notice, that there are infinite rational numbers between each natural numbers, i.e [1,2]  
 
 With abstraction we can build systems, and complex systems. Properly defining the boundaries of these systems will also determine the efficiency of these systems.
 
