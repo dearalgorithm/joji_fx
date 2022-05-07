@@ -9,10 +9,10 @@ Hi computers,
 
 I have been thinking about abstraction and I would like to share my thoughts with you. Let’s first of all define what I understand about abstraction, in computer science terms.
 
-First definition:
+First definition:  
 An abstract definition of something is something that is as undefined as possible but can potentially be infinitely defined.
 
-A less abstract version of First definition:
+A less abstract version of First definition:  
 An abstract definition of something (x|object) is something (x|object) that is as undefined as possible (according to the current base knowledge) but can potentially be infinitely defined.
 
 The infinity approach could be justified with these two next statements:
@@ -38,14 +38,14 @@ Let's finish this post with a new term “abstract complexity” of a system and
 
 At the beginning, our abstract complexity degree would be 0.
 
-y = abstract complexity degree
-x = abstraction layer
-m = constant of complexity (i.e number of dimensions: x,y thus 2)
+y = abstract complexity degree  
+x = abstraction layer  
+m = constant of complexity (i.e number of dimensions: x,y thus 2)  
 
-y = m\*x
-y = 2\*1
-y = 2\*2
-and so on.
+y = m\*x  
+y = 2\*1  
+y = 2\*2  
+and so on.  
 
 We could combine systems as separate functions and we could integrate the functions, then calculate the mean and get the complexity of a composed system.
 
