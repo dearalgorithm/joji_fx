@@ -15,4 +15,4 @@ $ hugo server -D
 
 # Deployment
 
-The deployment is done by Github Actions, check out [a relative link](.github/workflows/cd.yml)./github/workflows/cd.yml (in this repo) if you would like to know which jobs & steps are done.
+The deployment is done by Github Actions, check out [./github/workflows/cd.yml](.github/workflows/cd.yml) (in this repo) if you would like to know which jobs & steps are done.
