@@ -9,4 +9,5 @@ If you wanna reach me this is my email joji@dearalgorithm.com.
 
 Also, you can follow me on [GitHub](https://github.com/mugiwarafx).
 
-*best wishes tho!*
+*All the best,  
+Jordi*
